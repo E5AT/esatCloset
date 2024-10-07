@@ -1,0 +1,6 @@
+E:\esatCloset\esatCloset\bin\Debug\esatCloset.exe.config
+E:\esatCloset\esatCloset\bin\Debug\esatCloset.exe
+E:\esatCloset\esatCloset\bin\Debug\esatCloset.pdb
+E:\esatCloset\esatCloset\obj\Debug\esatCloset.csprojResolveAssemblyReference.cache
+E:\esatCloset\esatCloset\obj\Debug\esatCloset.exe
+E:\esatCloset\esatCloset\obj\Debug\esatCloset.pdb
