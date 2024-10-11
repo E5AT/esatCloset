@@ -18,124 +18,120 @@ namespace esatCloset
             List<string> trouser = new List<string>();
             List<string> belt = new List<string>();
             List<string> shoe = new List<string>();
-            List<int> comb = new List<int>();
             int[] choice = { 1, 1, 1, 1, 1, 1 };
             int rand;
             int answer;
-            
+            bool again = false;
+            string line = "";
 
-            while (true)
-            {
-                Console.WriteLine("Ready presets:\n[0] Schule\n[1] Denim\n[2] Manual");
-                answer = int.Parse(Console.ReadLine());
-                if (answer == 0) choice[0] = 0;
-
-                Console.WriteLine($"[0] T-Shirt: {choice[0]}\n[1] Shirt: {choice[1]}\n[2] Jacket: {choice[2]}\n[3] Trouser: {choice[3]}\n[4] Belt: {choice[4]}\n[5] Shoe: {choice[5]}\n[6] OK");
-                answer = int.Parse(Console.ReadLine());
-                if (answer == 6) break;
-                else if (choice[answer] == 0) choice[answer] = 1;
-                else choice[answer] = 0;
-            }
-
-            if (choice[0] == 1)
-            {
-                StreamReader tR = new StreamReader("E:\\esatCloset\\tshirt.txt");
-                string line = tR.ReadLine();
-
-                while (line != null)
+                while (true)
                 {
-                    tshirt.Add(line);
-                    line = tR.ReadLine();
+                    Console.WriteLine("Ready presets:\n[0] Schule\n[1] Denim\n[2] Manual");
+                    answer = int.Parse(Console.ReadLine());
+                    if (answer == 0) choice[0] = 0;
+
+                    Console.WriteLine($"[0] T-Shirt: {choice[0]}\n[1] Shirt: {choice[1]}\n[2] Jacket: {choice[2]}\n[3] Trouser: {choice[3]}\n[4] Belt: {choice[4]}\n[5] Shoe: {choice[5]}\n[6] OK");
+                    answer = int.Parse(Console.ReadLine());
+                    if (answer == 6) break;
+                    else if (choice[answer] == 0) choice[answer] = 1;
+                    else choice[answer] = 0;
                 }
 
-                rand = random.Next(0, tshirt.Count - 1);
-                Console.WriteLine(tshirt[rand]);
-                comb.Add(rand);
-            } else comb.Add(-1);
-
-            if (choice[1] == 1)
-            {
-                StreamReader sR = new StreamReader("E:\\esatCloset\\shirt.txt");
-                string line = sR.ReadLine();
-
-                while (line != null)
+            do {
+                if (choice[0] == 1)
                 {
-                    shirt.Add(line);
-                    line = sR.ReadLine();
+                    StreamReader r = new StreamReader("tshirt.txt");
+                    line = r.ReadLine();
+
+                    while (line != null)
+                    {
+                        tshirt.Add(line);
+                        line = r.ReadLine();
+                    }
+
+                    rand = random.Next(0, tshirt.Count - 1);
+                    Console.WriteLine(tshirt[rand]);
                 }
 
-                rand = random.Next(0, shirt.Count - 1);
-                Console.WriteLine(shirt[rand]);
-                comb.Add(rand);
-            } else comb.Add(-1);
-
-            if (choice[2] == 1)
-            {
-                StreamReader jR = new StreamReader("E:\\esatCloset\\jacket.txt");
-                string line = jR.ReadLine();
-
-                while (line != null)
+                if (choice[1] == 1)
                 {
-                    jacket.Add(line);
-                    line = jR.ReadLine();
+                    StreamReader r = new StreamReader("shirt.txt");
+                    line = r.ReadLine();
+
+                    while (line != null)
+                    {
+                        shirt.Add(line);
+                        line = r.ReadLine();
+                    }
+
+                    rand = random.Next(0, shirt.Count - 1);
+                    Console.WriteLine(shirt[rand]);
                 }
 
-                rand = random.Next(0, jacket.Count - 1);
-                Console.WriteLine(jacket[rand]);
-                comb.Add(rand);
-            } else comb.Add(-1);
-
-            if (choice[3] == 1)
-            {
-                StreamReader trR = new StreamReader("E:\\esatCloset\\trouser.txt");
-                string line = trR.ReadLine();
-
-                while (line != null)
+                if (choice[2] == 1)
                 {
-                    trouser.Add(line);
-                    line = trR.ReadLine();
+                    StreamReader r = new StreamReader("jacket.txt");
+                    line = r.ReadLine();
+
+                    while (line != null)
+                    {
+                        jacket.Add(line);
+                        line = r.ReadLine();
+                    }
+
+                    rand = random.Next(0, jacket.Count - 1);
+                    Console.WriteLine(jacket[rand]);
                 }
 
-                rand = random.Next(0, trouser.Count - 1);
-                Console.WriteLine(trouser[rand]);
-                comb.Add(rand);
-            } else comb.Add(-1);
-
-            if (choice[4] == 1)
-            {
-                StreamReader bR = new StreamReader("E:\\esatCloset\\belt.txt");
-                string line = bR.ReadLine();
-
-                while (line != null)
+                if (choice[3] == 1)
                 {
-                    belt.Add(line);
-                    line = bR.ReadLine();
+                    StreamReader r = new StreamReader("trouser.txt");
+                    line = r.ReadLine();
+
+                    while (line != null)
+                    {
+                        trouser.Add(line);
+                        line = r.ReadLine();
+                    }
+
+                    rand = random.Next(0, trouser.Count - 1);
+                    Console.WriteLine(trouser[rand]);
                 }
 
-                rand = random.Next(0, belt.Count - 1);
-                Console.WriteLine(belt[rand]);
-                comb.Add(rand);
-            } else comb.Add(-1);
-
-            if (choice[5] == 1)
-            {
-                StreamReader sR = new StreamReader("E:\\esatCloset\\shoe.txt");
-                string line = sR.ReadLine();
-
-                while (line != null)
+                if (choice[4] == 1)
                 {
-                    shoe.Add(line);
-                    line = sR.ReadLine();
+                    StreamReader r = new StreamReader("belt.txt");
+                    line = r.ReadLine();
+
+                    while (line != null)
+                    {
+                        belt.Add(line);
+                        line = r.ReadLine();
+                    }
+
+                    rand = random.Next(0, belt.Count - 1);
+                    Console.WriteLine(belt[rand]);
                 }
 
-                rand = random.Next(0, shoe.Count - 1);
-                Console.WriteLine(shoe[rand]);
-                comb.Add(rand);
-            } else comb.Add(-1);
+                if (choice[5] == 1)
+                {
+                    StreamReader r = new StreamReader("shoe.txt");
+                    line = r.ReadLine();
 
-            StreamWriter w = new StreamWriter("E:\\esatCloset\\combinations.txt",true);
-            w.WriteLine(string.Join(" ", comb));
-            w.Close();
+                    while (line != null)
+                    {
+                        shoe.Add(line);
+                        line = r.ReadLine();
+                    }
+
+                    rand = random.Next(0, shoe.Count - 1);
+                    Console.WriteLine(shoe[rand]);
+                }
+
+                Console.WriteLine("Is it OK?\n[0]OK\n[1]NOT OK");
+                if (Console.ReadLine() != "0") again = true;
+                else again = false;
+            } while (again == true);
         }
     }
 }
